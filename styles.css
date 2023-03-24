@@ -9,6 +9,8 @@
 body {
     background-color:#fed7aa ;
     font-family: 'Ubuntu', sans-serif;
+    position: relative;
+    z-index: 0;
 }
 
 .header {
@@ -39,7 +41,7 @@ p.logo {
     letter-spacing: -2px;
 }
 
-body > button {
+button {
     display: block;
     appearance: none;
     width: 150px;
@@ -135,6 +137,65 @@ input[type='checkbox']:checked::before {
 input[type='checkbox']:checked {
     background-color:#ecfccb ;
 }
+
+.form-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    top: 0;
+    left: 0;
+}
+
+form {
+    display: block;
+    position: relative;
+    width: clamp(500px, 50%, 700px);
+    height: 60%;
+    margin: 20vh auto;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.show {
+    display: block;
+}
+
+.main-container.active {
+    filter: blur(5px);
+}
+
+form > p {
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    background-color: lightgray;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+form > div {
+    padding: 20px;
+    display: flex;
+}
+
+form label,
+form > div p {
+    width: 150px;
+    text-align: right;
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+form input[type='text'] {
+    padding: 0.2rem;
+    width: 50%;
+    border: solid grey 1px;
+    border-radius: 10px;
+}
+
+
 
 
 

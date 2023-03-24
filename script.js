@@ -64,3 +64,20 @@ function changeStatus() {
 
 const markButtons = document.querySelectorAll('.card input');
 markButtons.forEach((btn) => btn.addEventListener('click', changeStatus));
+
+const formContainer = document.querySelector('.form-container');
+const mainContainer = document.querySelector('.main-container');
+const button = document.querySelector('.new-book');
+
+button.addEventListener('click', (event) => {
+  event.stopImmediatePropagation();
+  formContainer.classList.add('show');
+  mainContainer.classList.add('active');
+});
+
+document.addEventListener('click', (event) => {
+  if (formContainer.classList.contains('show') && (event.target === formContainer)) {
+    formContainer.classList.remove('show');
+    mainContainer.classList.remove('active');
+  }
+});
