@@ -57,6 +57,20 @@ button {
 
 }
 
+.card button {
+    appearance: none;
+    width: 80px;
+    height: 30px;
+    background-color:#b91c1c ;
+    color: white;
+    font-size: 0.7rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    margin: 0;
+}
+
 .card-container {
     width: clamp(600px, 70%, 900px);
     height: 700px;
@@ -76,7 +90,7 @@ button {
     border-radius: 5px;
     border-left: 2px solid grey;
     display: grid;
-    grid-template-columns: 2fr 2fr 1fr 1fr 2fr;
+    grid-template-columns: 2fr 2fr 1fr 1fr 2fr 1fr;
     padding: 15px;
     align-items: center;
     justify-items: center;
@@ -91,9 +105,13 @@ button {
     font-family: 'Ubuntu', sans-serif;
 }
 
+button:active {
+    background-color: #5f1313;
+}
+
 div.labels {
     display: grid;
-    grid-template-columns: 2fr 2fr 1fr 1fr 2fr;
+    grid-template-columns: 2fr 2fr 1fr 1fr 2fr 1fr;
     align-items: center;
     justify-items: center;
     padding-bottom: 15px;
@@ -107,7 +125,8 @@ input[type='checkbox'] {
     border-radius:13px ;
     background-color: white;
     position: relative;
-    justify-self: left;
+    justify-self: center;
+    align-self: end;
 }
 
 input[type='checkbox']::before {
@@ -125,8 +144,8 @@ input[type='checkbox']::after {
     content: 'Mark as read';
     position: absolute;
     width: max-content;
-    left: 50px;
-    top: 20%;
+    left: -15px;
+    top: -18px;
 }
 
 input[type='checkbox']:checked::before {
@@ -188,7 +207,8 @@ form > div p {
     font-size: 1rem;
 }
 
-form input[type='text'] {
+form input[type='text'],
+form input[type='number'] {
     padding: 0.2rem;
     width: 50%;
     border: solid grey 1px;
