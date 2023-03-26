@@ -5,9 +5,6 @@ function Book(title, author, numberOfPages, status) {
   this.author = author;
   this.numberOfPages = numberOfPages;
   this.status = status;
-  this.info = function () {
-    return `${title} by ${author}, ${numberOfPages} pages, ${status}.`;
-  };
 }
 
 const lotr = new Book('Lord of the Rings', 'J.R.R.Tolkien', 295, 'read');
@@ -45,7 +42,6 @@ submitBookButton.addEventListener('click', (e) => {
 const cardContainer = document.querySelector('.card-container');
 
 function displayBook(book) {
-  console.log(book);
   const card = document.createElement('div');
   card.classList.add('card');
   card.setAttribute('data-index', `${myLibrary.indexOf(book)}`);

@@ -10,7 +10,8 @@ body {
     background-color:#fed7aa ;
     font-family: 'Ubuntu', sans-serif;
     position: relative;
-    z-index: 0;
+    width: 100vw;
+    height: 100vh;
 }
 
 .header {
@@ -170,8 +171,10 @@ form {
     display: block;
     position: relative;
     width: clamp(500px, 50%, 700px);
-    height: 60%;
-    margin: 20vh auto;
+    height: clamp(500px, 60%, 600px);
+    margin-top: 20vh;
+    margin-left: auto;
+    margin-right: auto;
     background-color: white;
     border-radius: 20px;
 }
