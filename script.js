@@ -23,20 +23,22 @@ function addBookToLibrary() {
   if (document.querySelector('input#read').checked === true) {
     status = 'read';
   }
-  const book = new Book(title, author, numberOfPages, status);
-  myLibrary.push(book);
-  displayBook(book);
-  document.querySelector('input#title').value = '';
-  document.querySelector('input#author').value = '';
-  document.querySelector('input#pages').value = '';
-  document.querySelector('input#read').checked = false;
+  if (title !== '' && author !== '' && numberOfPages !== '') {
+    const book = new Book(title, author, numberOfPages, status);
+    myLibrary.push(book);
+    displayBook(book);
+    document.querySelector('input#title').value = '';
+    document.querySelector('input#author').value = '';
+    document.querySelector('input#pages').value = '';
+    document.querySelector('input#read').checked = false;
+    formContainer.classList.remove('show');
+    mainContainer.classList.remove('active');
+  }
 }
 const submitBookButton = document.querySelector('form > button');
 submitBookButton.addEventListener('click', (e) => {
   e.preventDefault();
   addBookToLibrary();
-  formContainer.classList.remove('show');
-  mainContainer.classList.remove('active');
 });
 
 const cardContainer = document.querySelector('.card-container');
